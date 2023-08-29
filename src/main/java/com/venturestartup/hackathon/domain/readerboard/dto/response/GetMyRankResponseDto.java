@@ -8,9 +8,12 @@ import lombok.Getter;
 public class GetMyRankResponseDto {
     private int rank;
 
-    public static GetMyRankResponseDto of(int rank){
+    private int score;
+
+    public static GetMyRankResponseDto of(int rank, int score){
         return GetMyRankResponseDto.builder()
                 .rank(rank)
+                .score(score)
                 .build();
     }
 }
