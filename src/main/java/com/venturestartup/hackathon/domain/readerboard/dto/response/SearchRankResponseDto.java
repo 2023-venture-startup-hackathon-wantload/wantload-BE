@@ -8,13 +8,13 @@ import org.springframework.data.redis.core.ZSetOperations;
 @Builder
 public class SearchRankResponseDto {
 
-    private String userName;
+    private String nickName;
 
     private int score;
 
-    public static SearchRankResponseDto of(String userName, int score){
+    public static SearchRankResponseDto of(String nickName, int score){
         return SearchRankResponseDto.builder()
-                .userName(userName)
+                .nickName(nickName)
                 .score(score)
                 .build();
     }
@@ -22,7 +22,7 @@ public class SearchRankResponseDto {
     public static SearchRankResponseDto convertToResponseRankingDto(ZSetOperations.TypedTuple typedTuple){
 
         return SearchRankResponseDto.builder()
-                .userName(typedTuple.getValue().toString())
+                .nickName(typedTuple.getValue().toString())
                 .score(typedTuple.getScore().intValue())
                 .build();
     }

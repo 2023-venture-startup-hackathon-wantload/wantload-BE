@@ -1,7 +1,6 @@
 package com.venturestartup.hackathon.domain.readerboard.dto.response;
 
 
-import com.venturestartup.hackathon.domain.readerboard.dto.request.SaveScoreResDto;
 import lombok.Builder;
 import lombok.Getter;
 
