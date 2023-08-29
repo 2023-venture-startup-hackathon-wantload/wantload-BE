@@ -1,7 +1,7 @@
-package com.venturestartup.hackathon.domain.fortune.entity;
-
+package com.venturestartup.hackathon.domain.item.entity;
 
 import com.venturestartup.hackathon.domain.fortune.constant.FortuneType;
+import com.venturestartup.hackathon.domain.item.constant.ItemType;
 import com.venturestartup.hackathon.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "fortune")
+@Table(name = "item")
 @Entity
-public class Fortune
-    extends BaseTimeEntity {
+public class Item
+        extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,18 +21,24 @@ public class Fortune
 
     @Enumerated(EnumType.STRING)
     @Column(length = 50, nullable = false)
-    private FortuneType fortuneType;
+    private ItemType itemType;
 
     @Column(length = 100, nullable = false)
-    private String bigTitle;
+    private String name;
 
-    @Column(length = 1000, nullable = false)
-    private String fortunePhoto;
+    @Column(nullable = false)
+    private Integer originPrice;
+
+    @Column(nullable = false)
+    private Integer discount;
 
     @Column(length = 100, nullable = false)
-    private String smallTitle;
+    private String company;
+
+    @Column(nullable = false)
+    private Integer starPoint;
 
     @Column(length = 1000, nullable = false)
-    private String comments;
+    private String itemPhoto;
 
 }
