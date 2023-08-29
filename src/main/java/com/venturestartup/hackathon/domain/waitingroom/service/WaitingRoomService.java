@@ -40,8 +40,8 @@ public class WaitingRoomService {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                log.info("[USER] OUT: " + outWaitingNum);
-                log.info("[USER] IN: " + inWaitingNum);
+//                log.info("[USER] OUT: " + outWaitingNum);
+//                log.info("[USER] IN: " + inWaitingNum);
                 changeUserNumInWaitingRoom(inWaitingNum - outWaitingNum);
                 log.info("[USER] CUR " + curWaitingNum);
             }
