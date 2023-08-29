@@ -1,6 +1,7 @@
-package com.venturestartup.hackathon.domain.fortune.Entity;
+package com.venturestartup.hackathon.domain.fortune.entity;
 
 
+import com.venturestartup.hackathon.domain.fortune.constant.FortuneType;
 import com.venturestartup.hackathon.global.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -17,6 +18,10 @@ public class Fortune
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 50, nullable = false)
+    private FortuneType fortuneType;
 
     @Column(length = 100, nullable = false)
     private String bigTitle;
