@@ -1,5 +1,6 @@
 package com.venturestartup.hackathon;
 
+import com.venturestartup.hackathon.global.config.redis.RedisUtil;
 import jakarta.annotation.PostConstruct;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
