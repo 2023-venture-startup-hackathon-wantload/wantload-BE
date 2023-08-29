@@ -1,6 +1,7 @@
 package com.venturestartup.hackathon.domain.waitingroom.service;
 
 
+import com.venturestartup.hackathon.domain.waitingroom.dto.response.ChangeWaitingNumResponseDto;
 import com.venturestartup.hackathon.domain.waitingroom.dto.response.CurWaitingUserResponseDto;
 import com.venturestartup.hackathon.domain.waitingroom.dto.response.GetMyPositionResponseDto;
 import com.venturestartup.hackathon.global.config.redis.RedisUtil;
@@ -71,4 +72,8 @@ public class WaitingRoomService {
         return GetMyPositionResponseDto.of(newPosition);
     }
 
+    public ChangeWaitingNumResponseDto changeWaitingNum(int changingNum){
+        curWaitingNum = changingNum;
+        return ChangeWaitingNumResponseDto.of(Boolean.TRUE);
+    }
 }

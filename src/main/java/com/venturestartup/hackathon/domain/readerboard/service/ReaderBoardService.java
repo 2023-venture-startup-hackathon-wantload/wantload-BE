@@ -56,6 +56,6 @@ public class ReaderBoardService {
         for (String s : ranking2) {
             ranking = redisTemplate.opsForZSet().reverseRank("ranking", s);
         }
-        return GetMyRankResponseDto.of((int) (ranking+1));//index가 0부터 시작되어서 1 더해준다
+        return GetMyRankResponseDto.of((int) (ranking+1), (int) Math.floor(ranking1));//index가 0부터 시작되어서 1 더해준다
     }
 }

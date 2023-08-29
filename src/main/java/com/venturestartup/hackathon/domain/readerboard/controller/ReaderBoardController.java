@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RequiredArgsConstructor
-@RequestMapping("/reader-board")
+@RequestMapping("/api/reader-board")
 @RestController
 public class ReaderBoardController {
 

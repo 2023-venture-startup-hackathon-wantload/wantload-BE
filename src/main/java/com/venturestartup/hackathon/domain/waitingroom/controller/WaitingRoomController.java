@@ -1,6 +1,7 @@
 package com.venturestartup.hackathon.domain.waitingroom.controller;
 
 
+import com.venturestartup.hackathon.domain.waitingroom.dto.response.ChangeWaitingNumResponseDto;
 import com.venturestartup.hackathon.domain.waitingroom.dto.response.CurWaitingUserResponseDto;
 import com.venturestartup.hackathon.domain.waitingroom.dto.response.GetMyPositionResponseDto;
 import com.venturestartup.hackathon.domain.waitingroom.service.WaitingRoomService;
@@ -10,10 +11,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RequestMapping("/api/waiting-room")
@@ -34,5 +32,12 @@ public class WaitingRoomController {
         GetMyPositionResponseDto newPosition = waitingRoomService.getMyPosition(position);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(BaseResponse.of(SuccessCode.OK, newPosition));
+    }
+
+    @PatchMapping("/{num}")
+    public ResponseEntity<BaseResponse<?>> change(@PathVariable int num){
+        ChangeWaitingNumResponseDto response = waitingRoomService.changeWaitingNum(num);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(BaseResponse.of(SuccessCode.OK, response));
     }
 }
