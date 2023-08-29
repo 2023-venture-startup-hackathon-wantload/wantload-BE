@@ -46,7 +46,8 @@ public class ItemService {
         return new GetCategoryItemDto(
                 item.getId(),
                 item.getName(),
-                item.getOriginPrice() - (item.getOriginPrice() * item.getDiscount() / 100)
+                item.getOriginPrice() - (item.getOriginPrice() * item.getDiscount() / 100),
+                item.getItemPhoto()
         );
     }
 
