@@ -29,7 +29,8 @@ public class ItemController {
      */
     @GetMapping(value = "{itemType}")
     public ResponseEntity<BaseResponse<?>> getCategoryItem(
-            @PathVariable ItemType itemType) {
+            @PathVariable ItemType itemType
+    ) {
         final List<GetCategoryItemDto> getCategoryItemDtos = itemService.getCategoryItem(itemType);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(BaseResponse.of(SuccessCode.OK, getCategoryItemDtos));
@@ -38,8 +39,5 @@ public class ItemController {
 
 
 
-    /**
-     * 상품 상세보기
-     */
 
 }

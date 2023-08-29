@@ -39,6 +39,7 @@ public class ItemService {
 
     private GetCategoryItemDto convertToCategoryItemDto(Item item){
         return new GetCategoryItemDto(
+                item.getId(),
                 item.getName(),
                 item.getOriginPrice() - (item.getOriginPrice() * item.getDiscount() / 100)
         );
