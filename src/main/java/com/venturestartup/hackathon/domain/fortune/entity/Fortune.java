@@ -35,4 +35,13 @@ public class Fortune
     @Column(length = 1000, nullable = false)
     private String comments;
 
+    @Column(length = 100, nullable = false)
+    private String itemName;
+
+    @Column(nullable = false)
+    private Integer sellPrice;
+
+    @Column(nullable = false)
+    private Integer discount;
+
 }
