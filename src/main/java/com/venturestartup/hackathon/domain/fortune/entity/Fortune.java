@@ -3,6 +3,7 @@ package com.venturestartup.hackathon.domain.fortune.entity;
 
 import com.venturestartup.hackathon.domain.fortune.constant.FortuneType;
 import com.venturestartup.hackathon.global.common.BaseEntity;
+import com.venturestartup.hackathon.global.common.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "fortune")
 @Entity
 public class Fortune
-    extends BaseEntity {
+    extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
