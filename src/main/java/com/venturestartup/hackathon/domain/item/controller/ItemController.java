@@ -1,15 +1,14 @@
 package com.venturestartup.hackathon.domain.item.controller;
 
-import com.venturestartup.hackathon.domain.fortune.dto.GetRecItemDto;
 import com.venturestartup.hackathon.domain.item.constant.ItemType;
 import com.venturestartup.hackathon.domain.item.dto.GetCategoryItemDto;
+import com.venturestartup.hackathon.domain.item.dto.GetItemDetailDto;
 import com.venturestartup.hackathon.domain.item.service.ItemService;
 import com.venturestartup.hackathon.global.common.BaseResponse;
 import com.venturestartup.hackathon.global.common.SuccessCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,8 +35,16 @@ public class ItemController {
                 .body(BaseResponse.of(SuccessCode.OK, getCategoryItemDtos));
     }
 
-
-
-
+    /**
+     * 상품 상세보기
+     */
+    @GetMapping(value = "/detail/{itemId}")
+    public ResponseEntity<BaseResponse<?>> getItemDetail(
+            @PathVariable Long itemId
+    ) {
+        final GetItemDetailDto getItemDetailDto = itemService.getItemDetail(itemId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(BaseResponse.of(SuccessCode.OK, getItemDetailDto));
+    }
 
 }
