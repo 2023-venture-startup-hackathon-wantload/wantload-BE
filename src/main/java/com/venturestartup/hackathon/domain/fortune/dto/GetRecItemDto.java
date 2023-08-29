@@ -7,6 +7,9 @@ public record GetRecItemDto(
         String bigTitle,
         String fortunePhoto,
         String smallTitle,
-        String comments
+        String comments,
+        String itemName,
+        Integer sellPrice,
+        Integer discount
 ) {
 }

@@ -43,7 +43,10 @@ public class FortuneService {
                 fortune.getBigTitle(),
                 fortune.getFortunePhoto(),
                 fortune.getSmallTitle(),
-                fortune.getComments()
+                fortune.getComments(),
+                fortune.getItemName(),
+                fortune.getSellPrice(),
+                fortune.getDiscount()
         );
     }
 }
